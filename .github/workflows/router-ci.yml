@@ -1,0 +1,29 @@
+name: Router CI
+
+on:
+  push:
+    paths:
+      - "router/**"
+      - ".github/workflows/router-ci.yml"
+  pull_request:
+    paths:
+      - "router/**"
+      - ".github/workflows/router-ci.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  cargo-check:
+    name: Cargo check and test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: router
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Build
+        run: cargo check --all-targets
+      - name: Test
+        run: cargo test --all-targets

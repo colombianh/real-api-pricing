@@ -1,0 +1,18 @@
+{
+  "interactive_coding": {
+    "mode": "coding",
+    "minimum_capability": 50,
+    "allowed_regions": ["US", "GLOBAL", "LOCAL"],
+    "require_approval": true
+  },
+  "private_local": {
+    "mode": "local_only",
+    "local_only": true,
+    "require_approval": false
+  },
+  "budget_limited": {
+    "mode": "cheapest",
+    "maximum_cost": 10.0,
+    "require_approval": true
+  }
+}

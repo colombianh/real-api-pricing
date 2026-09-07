@@ -20,6 +20,8 @@ cp .env.example .env
 cargo run -- --config router.toml serve
 ```
 
+Read [OPERATOR.md](OPERATOR.md) before exposing the service beyond your machine.
+
 ## Ask for a route
 
 ```bash
@@ -33,7 +35,7 @@ curl -s http://127.0.0.1:8787/v1/route \
   }'
 ```
 
-The response is a proposal only. Set `approved: true` and call `/v1/chat/completions` with `messages` to allow an actual provider call.
+The response is a proposal only. Set `approved: true` and call `/v1/chat/completions` with `messages` to allow an actual provider call. Pre-built policy examples live in `policy.example.json`.
 
 ## Endpoints
 
