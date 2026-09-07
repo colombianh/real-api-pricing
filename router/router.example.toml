@@ -1,0 +1,26 @@
+bind = "127.0.0.1:8787"
+data_file = "../derived/points.json"
+audit_file = "router-audit.jsonl"
+max_snapshot_age_hours = 168
+
+# Subscription data is analytics-only unless a provider gives you an explicit supported API.
+# Never place browser cookies, consumer-subscription credentials, or account passwords here.
+[[providers]]
+id = "openai"
+kind = "openai_compatible"
+base_url = "https://api.openai.com/v1"
+api_key_env = "OPENAI_API_KEY"
+regions = ["US", "GLOBAL"]
+
+[[providers]]
+id = "anthropic"
+kind = "anthropic"
+base_url = "https://api.anthropic.com"
+api_key_env = "ANTHROPIC_API_KEY"
+regions = ["US", "GLOBAL"]
+
+[[providers]]
+id = "ollama"
+kind = "openai_compatible"
+base_url = "http://127.0.0.1:11434/v1"
+regions = ["LOCAL"]
